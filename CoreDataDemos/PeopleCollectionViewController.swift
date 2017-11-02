@@ -22,7 +22,10 @@ class PeopleCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
         
         DBManager.shared.getPepoleOrCrash().forEach { (p) in
-            print(p)
+            if let data = p.imageData{
+                let img = UIImage(data: data as Data)
+                print("With image")
+            }
         }
     }
 
