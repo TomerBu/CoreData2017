@@ -12,6 +12,7 @@ import CoreData
 
 @objc(Person)
 public class Person: NSManagedObject {
+    
     convenience init(email:String, image: Data?) {
         let context = DBManager.shared.context
         let desc = NSEntityDescription.entity(forEntityName: "Person", in: context)!

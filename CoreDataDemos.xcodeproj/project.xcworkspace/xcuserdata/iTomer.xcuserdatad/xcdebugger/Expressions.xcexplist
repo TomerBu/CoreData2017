@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "PeopleCollectionViewController.editPersonTapped(notification:):PeopleCollectionViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "notification.object">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AddPersonViewController.person.didset:AddPersonViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "person.email">
+            </PersistentString>
+            <PersistentString
+               value = "person">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AddPersonViewController.updateUI():AddPersonViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "email">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

@@ -10,6 +10,18 @@ import UIKit
 import CoreData
 class AddPersonViewController: UIViewController {
     
+    var person: Person?{
+        didSet{
+         updateUI()
+        }
+    }
+    
+    func updateUI(){
+        self.email?.text = person?.email
+        if let data = person?.imageData{
+            self.photo?.image = UIImage(data: data as Data)
+        }
+    }
     @IBAction func save(_ sender: UIButton) {
         guard let email = email.text else{ return} //Must have an error for textFields!!!!!!!!!!!
         
@@ -20,10 +32,18 @@ class AddPersonViewController: UIViewController {
             data = UIImageJPEGRepresentation(img, 1)
         }
         
-        let person = Person(email: email, image: data)
-        DBManager.shared.addPerson(p: person)
+        if person != nil{
+            person?.email = email
+            person?.imageData = data as NSData?
+            DBManager.shared.updatePerson(p: person!)
+            NotificationCenter.default.post(name: .editPerson, object: nil, userInfo: ["Person": person!])
+        }else{
+            person = Person(email: email, image: data)
+            DBManager.shared.addPerson(p: person!)
+            NotificationCenter.default.post(name: .newPerson, object: nil)
+        }
         
-        NotificationCenter.default.post(name: .newPerson, object: nil)
+        
         dismiss(animated: true)
     }
     
@@ -36,14 +56,10 @@ class AddPersonViewController: UIViewController {
             photo.addGestureRecognizer(gesture)
         }
     }
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(personAdded(notification:)), name: .newPerson, object: nil)
-    }
-    
-    @objc func personAdded(notification:Notification){
-        print("person added")
+        updateUI()
     }
     
     @objc func pickPhoto(){
@@ -52,7 +68,7 @@ class AddPersonViewController: UIViewController {
         present(picker, animated: true, completion: nil)
     }
     @IBOutlet weak var email: UITextField!
-
+    
 }
 extension AddPersonViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -63,14 +79,14 @@ extension AddPersonViewController: UIImagePickerControllerDelegate, UINavigation
         print(info)
         picker.dismiss(animated: true, completion: nil)
         photo.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        
-    }
+    }  
 }
 
 
 
 extension Notification.Name{
-    static let newPerson = Notification.Name(rawValue: "DidResetStatistics")
+    static let newPerson = Notification.Name(rawValue: "newPerson")
+    static let editPerson = Notification.Name(rawValue: "editPerson")
 }
 
 //global variables are Thread safe & lazy-loaded in swift.
@@ -83,14 +99,3 @@ class UserPrefs {
     }
 }
 
-
-extension UserPrefs{
-    var darn:String{
-        return ""
-    }
-    
-    static let Boobs = "👚"
-}
-
-
-let boop = UserPrefs.Boobs

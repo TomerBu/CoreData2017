@@ -26,9 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let nav = UINavigationController(rootViewController: vc)
         window?.rootViewController = nav
-        
-        return true
-        
+
         return true
     }
 

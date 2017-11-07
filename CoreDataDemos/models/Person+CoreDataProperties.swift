@@ -19,5 +19,23 @@ extension Person {
 
     @NSManaged public var email: String?
     @NSManaged public var imageData: NSData?
+    @NSManaged public var phone: NSSet?
+
+}
+
+// MARK: Generated accessors for phone
+extension Person {
+
+    @objc(addPhoneObject:)
+    @NSManaged public func addToPhone(_ value: Phone)
+
+    @objc(removePhoneObject:)
+    @NSManaged public func removeFromPhone(_ value: Phone)
+
+    @objc(addPhone:)
+    @NSManaged public func addToPhone(_ values: NSSet)
+
+    @objc(removePhone:)
+    @NSManaged public func removeFromPhone(_ values: NSSet)
 
 }

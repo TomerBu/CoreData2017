@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +12,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoreDataDemos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -21,13 +20,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-273" y="125"/>
+            <point key="canvasLocation" x="471" y="143"/>
         </scene>
         <!--Add A Person-->
         <scene sceneID="kDg-Qx-hfU">
             <objects>
-                <viewController storyboardIdentifier="AddPersonViewController" id="no3-YM-hnd" customClass="AddPersonViewController" customModule="UserDefaultsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddPersonViewController" id="no3-YM-hnd" customClass="AddPersonViewController" customModule="CoreDataDemos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="re2-zm-myZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,25 +78,61 @@
         <!--People-->
         <scene sceneID="008-Bn-wIf">
             <objects>
-                <collectionViewController storyboardIdentifier="PeopleCollectionViewController" id="lzL-c9-4ao" customClass="PeopleCollectionViewController" customModule="UserDefaultsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="PeopleCollectionViewController" id="lzL-c9-4ao" customClass="PeopleCollectionViewController" customModule="CoreDataDemos" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="TRA-0e-SIe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7aD-jV-ST2">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="307" height="170"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="personItem" id="RLA-wI-eQ4" customClass="PersonCollectionViewCell" customModule="UserDefaultsDemo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="personItem" id="RLA-wI-eQ4" customClass="PersonCollectionViewCell" customModule="CoreDataDemos" customModuleProvider="target">
+                                <rect key="frame" x="34" y="0.0" width="307" height="170"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="307" height="170"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gCs-mo-LrN">
+                                            <rect key="frame" x="0.0" y="10" width="307" height="150"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Woot?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feo-Qy-Om3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="307" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="UDe-uU-cFo">
+                                                    <rect key="frame" x="0.0" y="20.5" width="307" height="129.5"/>
+                                                </imageView>
+                                            </subviews>
+                                        </stackView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-Checked" translatesAutoresizingMaskIntoConstraints="NO" id="4Tc-Cs-YR8">
+                                            <rect key="frame" x="307" y="145" width="25" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="25" id="pCc-1A-1NJ"/>
+                                                <constraint firstAttribute="height" constant="25" id="pbU-1A-K9i"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="gCs-mo-LrN" firstAttribute="leading" secondItem="RLA-wI-eQ4" secondAttribute="leading" constant="10" id="0LZ-Ec-lCW"/>
+                                    <constraint firstAttribute="bottom" secondItem="4Tc-Cs-YR8" secondAttribute="bottom" id="WOf-9n-hBe"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Tc-Cs-YR8" secondAttribute="trailing" id="XyT-PG-QS3"/>
+                                    <constraint firstItem="gCs-mo-LrN" firstAttribute="bottom" secondItem="RLA-wI-eQ4" secondAttribute="bottom" constant="-10" id="fur-97-TvK"/>
+                                    <constraint firstItem="gCs-mo-LrN" firstAttribute="top" secondItem="RLA-wI-eQ4" secondAttribute="top" constant="10" id="h1g-RQ-agP"/>
+                                    <constraint firstAttribute="trailing" secondItem="gCs-mo-LrN" secondAttribute="trailing" constant="10" id="lMa-1d-qf0"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="checkedImage" destination="4Tc-Cs-YR8" id="rcb-bg-2D0"/>
+                                    <outlet property="emailLabel" destination="feo-Qy-Om3" id="C98-bI-c8e"/>
+                                    <outlet property="image" destination="UDe-uU-cFo" id="4FX-QW-bO0"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -108,7 +144,10 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8H5-OC-9Rc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1150" y="547"/>
+            <point key="canvasLocation" x="1149.5999999999999" y="546.47676161919048"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-Checked" width="52" height="52"/>
+    </resources>
 </document>

@@ -56,18 +56,15 @@ class DBManager: NSObject { //inherit from NSObject allows us to "listen" to kvo
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nserror = error as NSError
-                
-                
-                
 
-   
             }
         }
     }
     
     private func deleteTheDB(){
         let docs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        
+        //this is not relibale - the path keeps changing. shouldnt be used.
+        //go for migrations / create nsmanagedObjects instead.
         let storeURL = docs.appendingPathComponent("Database.sqlite")
         
         try! FileManager.default.removeItem(at: storeURL)//.removeItemAtPath(storeURL.path, error)
@@ -89,6 +86,13 @@ class DBManager: NSObject { //inherit from NSObject allows us to "listen" to kvo
     }
     
     public func addPerson(p: Person){
+        //the user does not know how this class works. it's abstraction.
+        //we may switch to Some other persistence mechanisms later
+        //and the user will be ignorant about that fact.
+        saveContext()
+    }
+    
+    public func updatePerson(p: Person){
         //the user does not know how this class works. it's abstraction.
         //we may switch to Some other persistence mechanisms later
         //and the user will be ignorant about that fact.

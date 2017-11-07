@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36477CD91FAB60C400567965 /* Phone+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36477CD71FAB60C400567965 /* Phone+CoreDataClass.swift */; };
+		36477CDA1FAB60C400567965 /* Phone+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36477CD81FAB60C400567965 /* Phone+CoreDataProperties.swift */; };
 		D51BE5301FAB480B007F3576 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51BE52F1FAB480B007F3576 /* AppDelegate.swift */; };
 		D51BE5321FAB480B007F3576 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51BE5311FAB480B007F3576 /* ViewController.swift */; };
 		D51BE5351FAB480B007F3576 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D51BE5331FAB480B007F3576 /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		36477CD71FAB60C400567965 /* Phone+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Phone+CoreDataClass.swift"; sourceTree = "<group>"; };
+		36477CD81FAB60C400567965 /* Phone+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Phone+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D51BE52C1FAB480B007F3576 /* CoreDataDemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataDemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D51BE52F1FAB480B007F3576 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D51BE5311FAB480B007F3576 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +53,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36477CD61FAB609500567965 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				36477CD71FAB60C400567965 /* Phone+CoreDataClass.swift */,
+				36477CD81FAB60C400567965 /* Phone+CoreDataProperties.swift */,
+				D51BE5441FAB48C8007F3576 /* Person+CoreDataClass.swift */,
+				D51BE5451FAB48C8007F3576 /* Person+CoreDataProperties.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
 		D51BE5231FAB480B007F3576 = {
 			isa = PBXGroup;
 			children = (
@@ -68,8 +83,7 @@
 		D51BE52E1FAB480B007F3576 /* CoreDataDemos */ = {
 			isa = PBXGroup;
 			children = (
-				D51BE5441FAB48C8007F3576 /* Person+CoreDataClass.swift */,
-				D51BE5451FAB48C8007F3576 /* Person+CoreDataProperties.swift */,
+				36477CD61FAB609500567965 /* models */,
 				D51BE52F1FAB480B007F3576 /* AppDelegate.swift */,
 				D51BE5311FAB480B007F3576 /* ViewController.swift */,
 				D51BE54A1FAB4B24007F3576 /* PeopleCollectionViewController.swift */,
@@ -159,8 +173,10 @@
 			files = (
 				D51BE5461FAB48C8007F3576 /* Person+CoreDataClass.swift in Sources */,
 				D51BE5491FAB4908007F3576 /* DBManager.swift in Sources */,
+				36477CD91FAB60C400567965 /* Phone+CoreDataClass.swift in Sources */,
 				D51BE54F1FAB4B4F007F3576 /* AddPersonViewController.swift in Sources */,
 				D51BE5471FAB48C8007F3576 /* Person+CoreDataProperties.swift in Sources */,
+				36477CDA1FAB60C400567965 /* Phone+CoreDataProperties.swift in Sources */,
 				D51BE54B1FAB4B24007F3576 /* PeopleCollectionViewController.swift in Sources */,
 				D51BE5321FAB480B007F3576 /* ViewController.swift in Sources */,
 				D51BE5301FAB480B007F3576 /* AppDelegate.swift in Sources */,
